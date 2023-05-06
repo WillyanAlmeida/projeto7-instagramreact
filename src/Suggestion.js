@@ -1,18 +1,16 @@
-import ReactDOM from "react-dom";
 
-export default function Sugestion(props){
+export default function Suggestion(props){
+    const {imagem, alt, nome, razao} = props.sugestion
     return(
-        <div class="sugestao">
-        <div class="usuario">
-            <img src={props.sugestion.imagem} alt={props.sugestion.alt} />
-            <div class="texto">
-                <div class="nome">{props.sugestion.nome}</div>
-                <div class="razao">{props.sugestion.razao}</div>
+        <div className="sugestao">
+        <div className="usuario">
+            <img src={imagem} alt={alt} />
+            <div className="texto">
+                <div className="nome">{nome}</div>
+                <div className="razao">{razao}</div>
             </div>
         </div>
-
-        <div class="seguir">Seguir</div>
+        <div className="seguir">Seguir</div>
     </div>
-
     )
 }

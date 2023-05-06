@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom";
-import Sugestion from "./Suggestion"
+import Suggestion from "./Suggestion"
 
 
 let suggestionsdata = [{imagem:"assets/img/bad.vibes.memes.svg", alt:"bad.vibes.memes.svg", nome:"bad.vibes.memes", razao:"Segue você" },
@@ -11,13 +11,13 @@ let suggestionsdata = [{imagem:"assets/img/bad.vibes.memes.svg", alt:"bad.vibes.
 
 export default function Suggestions(){
     return(
-        <div class="sugestoes">
-                <div class="titulo">
+        <div className="sugestoes">
+                <div className="titulo">
                     Sugestões para você
                     <div>Ver tudo</div>
                 </div>
 
-                {suggestionsdata.map((sugestion)=> <Sugestion sugestion={sugestion} />)}
+                {suggestionsdata.map((sugestion)=> <Suggestion sugestion={sugestion} />)}
 
             </div>
     )
