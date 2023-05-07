@@ -1,12 +1,15 @@
 
 
-export default function Post(){
+export default function Post(props){
+const datapost = props.Postsdata;
+
+
     return(
         <div className="post">
         <div className="topo">
             <div className="usuario">
-                <img src="assets/img/meowed.svg" alt="meowed" />
-                meowed
+                <img src={datapost.userpost.imagem} alt={datapost.userpost.alt} />
+                {datapost.userpost.user}
             </div>
             <div className="acoes">
                 <ion-icon name="ellipsis-horizontal"></ion-icon>
@@ -14,7 +17,7 @@ export default function Post(){
         </div>
 
         <div className="conteudo">
-            <img src="assets/img/gato-telefone.svg" alt="gato-telefone" />
+            <img src={datapost.postconteudo.imagem} alt={datapost.postconteudo.alt} />
         </div>
 
         <div className="fundo">
@@ -30,9 +33,9 @@ export default function Post(){
             </div>
 
             <div className="curtidas">
-                <img src="assets/img/respondeai.svg" alt="respondeai" />
+                <img src={datapost.postcurtida[0].imagem} alt={datapost.postcurtida[0].alt} />
                 <div className="texto">
-                    Curtido por <strong>respondeai</strong> e <strong>outras 101.523 pessoas</strong>
+                    Curtido por <strong>{datapost.postcurtida[0].user}</strong> e <strong>outras {datapost.postcurtida[0].curtidas} pessoas</strong>
                 </div>
             </div>
         </div>

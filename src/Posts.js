@@ -1,80 +1,23 @@
+import Post from "./Post"
 
+let postdata =[{userpost:{imagem:"assets/img/meowed.svg", alt:"meowed", user:"meowed"}, 
+postconteudo:{imagem:"assets/img/gato-telefone.svg", alt:"gato-telefone"},
+postcurtida:[{imagem:"assets/img/respondeai.svg", alt:"respondeai", user:"barked", curtidas:100}]},
 
-let postdata =[{ftperfil:"assets/img/meowed.svg", altperfil:"meowed", user:"meowed", conteudo:"assets/img/gato-telefone.svg"}]
+{userpost:{imagem:"assets/img/barked.svg", alt:"barked", user:"barked"}, 
+postconteudo:{imagem:"assets/img/dog.svg", alt:"dog"},
+postcurtida:[{imagem:"assets/img/adorable_animals.svg", alt:"adorable_animals", user:"meowed", curtidas:99}]},
+
+{userpost:{imagem:"assets/img/meowed.svg", alt:"meowed", user:"meowed"}, 
+postconteudo:{imagem:"assets/img/gato-telefone.svg", alt:"gato-telefone"},
+postcurtida:[{imagem:"assets/img/respondeai.svg", alt:"respondeai", user:"barked", curtidas:101}]}
+
+]
 
 export default function Posts() {
     return (
         <div className="posts">
-            <div className="post">
-                <div className="topo">
-                    <div className="usuario">
-                        <img src="assets/img/meowed.svg" alt="meowed" />
-                        meowed
-                    </div>
-                    <div className="acoes">
-                        <ion-icon name="ellipsis-horizontal"></ion-icon>
-                    </div>
-                </div>
-
-                <div className="conteudo">
-                    <img src="assets/img/gato-telefone.svg" alt="gato-telefone" />
-                </div>
-
-                <div className="fundo">
-                    <div className="acoes">
-                        <div>
-                            <ion-icon name="heart-outline"></ion-icon>
-                            <ion-icon name="chatbubble-outline"></ion-icon>
-                            <ion-icon name="paper-plane-outline"></ion-icon>
-                        </div>
-                        <div>
-                            <ion-icon name="bookmark-outline"></ion-icon>
-                        </div>
-                    </div>
-
-                    <div className="curtidas">
-                        <img src="assets/img/respondeai.svg" alt="respondeai" />
-                        <div className="texto">
-                            Curtido por <strong>respondeai</strong> e <strong>outras 101.523 pessoas</strong>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div className="post">
-                <div className="topo">
-                    <div className="usuario">
-                        <img src="assets/img/barked.svg" alt="barked" />
-                        barked
-                    </div>
-                    <div className="acoes">
-                        <ion-icon name="ellipsis-horizontal"></ion-icon>
-                    </div>
-                </div>
-
-                <div className="conteudo">
-                    <img src="assets/img/dog.svg" alt="dog" />
-                </div>
-
-                <div className="fundo">
-                    <div className="acoes">
-                        <div>
-                            <ion-icon name="heart-outline"></ion-icon>
-                            <ion-icon name="chatbubble-outline"></ion-icon>
-                            <ion-icon name="paper-plane-outline"></ion-icon>
-                        </div>
-                        <div>
-                            <ion-icon name="bookmark-outline"></ion-icon>
-                        </div>
-                    </div>
-
-                    <div className="curtidas">
-                        <img src="assets/img/adorable_animals.svg" alt="adorable_animals" />
-                        <div className="texto">
-                            Curtido por <strong>adorable_animals</strong> e <strong>outras 99.159 pessoas</strong>
-                        </div>
-                    </div>
-                </div>
-            </div>
+             {postdata.map((post) => <Post Postsdata={post} />)}
         </div>)
+     
 }
