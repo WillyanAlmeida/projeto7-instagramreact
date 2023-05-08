@@ -17,7 +17,7 @@ postcurtida:[{imagem:"assets/img/9gag.svg", alt:"9gag", user:"9gag", curtidas:10
 export default function Posts() {
     return (
         <div className="posts">
-             {postdata.map((post) => <Post Postsdata={post} />)}
+             {postdata.map((post) => <Post key={post.userpost.imagem} Postsdata={post} />)}
         </div>)
      
 }

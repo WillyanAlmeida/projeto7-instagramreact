@@ -1,17 +1,15 @@
 import { useState } from "react";
 
-
 export default function Post(props) {
-    let [datapost, setDatapost] = useState(props.Postsdata);
+    let datapost = props.Postsdata;
     let [curtida, setCurtida] = useState('heart-outline');
     let [salve, setSalve] = useState('bookmark-outline');
-    let [curt, setCurt] = useState(datapost.postcurtida[0].curtidas)
-    let [heart, setHeart] = useState('')
+    let [curt, setCurt] = useState(datapost.postcurtida[0].curtidas);
+    let [heart, setHeart] = useState('');
 
     function curtiuimg() {
         if (curtida === 'heart-outline') {
             setCurtida('heart-sharp')
-
             setCurt(curt + 1)
             setHeart('redheart')
         }
@@ -25,12 +23,8 @@ export default function Post(props) {
             setCurtida('heart-outline')
             setCurt(curt - 1)
             setHeart('')
-
         }
-
     }
-
-
 
     return (
         <div data-test="post" className="post">
@@ -45,7 +39,7 @@ export default function Post(props) {
             </div>
 
             <div className="conteudo">
-                <img data-test="post-image" onClick={curtiuimg} src={datapost.postconteudo.imagem} alt={datapost.postconteudo.alt} />
+                <img data-test="post-image" onDoubleClick={curtiuimg} src={datapost.postconteudo.imagem} alt={datapost.postconteudo.alt} />
             </div>
 
             <div className="fundo">

@@ -1,4 +1,3 @@
-import ReactDOM from "react-dom";
 import Suggestion from "./Suggestion"
 
 
@@ -17,7 +16,7 @@ export default function Suggestions(){
                     <div>Ver tudo</div>
                 </div>
 
-                {suggestionsdata.map((sugestion)=> <Suggestion sugestion={sugestion} />)}
+                {suggestionsdata.map((sugestion)=> <Suggestion key={sugestion.imagem} sugestion={sugestion} />)}
 
             </div>
     )
