@@ -5,22 +5,24 @@ export default function User() {
     let [Foto, setFoto] = useState("assets/img/catanacomics.svg")
 
     function mudarnome() {
+        let nome1=Nome;
         Nome = prompt('diga seu nome')
-        Nome != '' ? setNome(Nome) : Nome = prompt('Diga seu nome')
+        Nome !== '' ? setNome(Nome): setNome(nome1)
     }
 
     function mudarfoto() {
+        let foto1=Foto;
         Foto = prompt('cole link da imagem')
-        Foto != '' ? setFoto(Foto) : Foto = prompt('cole link da imagem')
+        Foto !== '' ? setFoto(Foto) : setFoto(foto1)
     }
 
     return (
         <div className="usuario">
-            <img onClick={mudarfoto} src={Foto} alt="imagem de perfil" />
+            <img data-test="profile-image" onClick={mudarfoto} src={Foto} alt="imagem de perfil" />
             <div className="texto">
                 <span>
-                    <strong>{Nome}</strong>
-                    <ion-icon onClick={mudarnome} name="pencil"></ion-icon>
+                    <strong data-test="name" >{Nome}</strong>
+                    <ion-icon data-test="edit-name" onClick={mudarnome} name="pencil"></ion-icon>
                 </span>
             </div>
         </div>
